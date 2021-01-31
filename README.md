@@ -26,7 +26,18 @@
 
 #### 基础
 
-#### 容器
+1. **[Java 基础知识](docs/language/java/basis/Java基础知识.md)**
+2. **[Java 基础知识疑难点/易错点](docs/language/java/basis/Java基础知识疑难点.md)**
+
+**重要知识点详解：**
+
+1. [枚举](docs/language/java/basis/用好Java中的枚举真的没有那么简单.md) 
+2. [Java 常见关键字总结：final、static、this、super!](docs/language/java/basis/Java常见关键字总结.md)
+3. [什么是反射机制?反射机制的应用场景有哪些?](docs/language/java/basis/反射机制.md)
+4. [代理模式详解：静态代理+JDK/CGLIB 动态代理实战](docs/language/java/basis/代理模式详解.md)
+5. [BIO,NIO,AIO 总结 ](docs/language/java/basis/BIO,NIO,AIO总结.md)
+
+#### 容器 
 
 #### 并发
 
