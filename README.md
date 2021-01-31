@@ -18,11 +18,28 @@
 
 ## Shell
 
-
+1. **[shell脚本](docs/operating-system/shell脚本.md)**
+2. **[常用功能Shell代码片段](docs/operating-system/常用功能Shell代码片段)**
 
 # 计算机网络
 
+## 网络协议
+
+1. IP协议
+2. UDP协议
+3. TCP协议
+4. Socket编程
+5. HTTP协议
+6. 流媒体协议
+7. P2P协议
+8. DNS
+9. CDN
+
 # 数据结构与算法
+
+1. 基础数据与算法
+2. 操作系统中数据结构与算法应用
+3. Java容器中对常用数据结构的封装
 
 # 编程语言
 
@@ -112,9 +129,7 @@
 
 ## 分布式数据存储
 
-### Hadoop
-
-1. 基本原理
+### HDFS
 
 ### Hive
 
@@ -124,15 +139,21 @@
 
 ### Impala
 
+1. impala使用
+
 ### Clickhouse
+
+1. clickhouse使用
 
 ### Kudu
 
-### Oozie
-
 ### Elasticsearch
 
+### Oozie
+
 ## 数据计算
+
+### Yarn
 
 ### Spark
 
@@ -142,9 +163,18 @@
 
 ### 集成搭建
 
+1. CDH集群搭建
+2. CDH扩容
+3. CDP集群搭建
+
 ### API
 
+1. CDH rest api
+2. CDH java api
+
 ### 第三方服务集成
+
+1. parcels 打包
 
 
 
