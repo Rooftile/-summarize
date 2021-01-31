@@ -1,29 +1,36 @@
+
+
 [TOC]
 
 
-# 技术总结大纲
 
-## 操作系统
+# 操作系统
 
-### 系统调用
+## 操作命令
 
-### 内存管理
+1. **[操作系统命令总结](docs/operating-system/操作系统命令.md)**
 
-### CPU管理
+## 系统调用
 
-### Shell
+## 内存管理
 
-## 计算机网络
+## CPU管理
+
+## Shell
 
 
 
-## 数据结构与算法
+# 计算机网络
 
-## 编程语言
 
-### Java
 
-#### 基础
+# 数据结构与算法
+
+# 编程语言
+
+## Java
+
+### 基础
 
 1. **[Java 基础知识](docs/language/java/basis/Java基础知识.md)**
 2. **[Java 基础知识疑难点/易错点](docs/language/java/basis/Java基础知识疑难点.md)**
@@ -36,73 +43,73 @@
 4. [代理模式详解：静态代理+JDK/CGLIB 动态代理实战](docs/language/java/basis/代理模式详解.md)
 5. [BIO,NIO,AIO 总结 ](docs/language/java/basis/BIO,NIO,AIO总结.md)
 
-#### 容器 
+### 容器 
 
-#### 并发
+### 并发
 
-#### JVM
+### JVM
 
-### C++
+## C++
 
-### Go
+## Go
 
-### Python
+## Python
 
-### Scala
+## Scala
 
-## 工具框架
+# 工具框架
 
-### 队列
+## 队列
 
-#### Kafka
+### Kafka
 
-### 关系型数据库
+## 关系型数据库
 
-#### Mysql
+### Mysql
 
-#### Oracle
+### Oracle
 
-### 缓存数据库
+## 缓存数据库
 
-#### Redis
+### Redis
 
-### 数据一致性
+## 数据一致性
 
-#### Zookeeper
+### Zookeeper
 
-### 分布式数据存储
+## 分布式数据存储
 
-#### Hadoop
+### Hadoop
 
-#### Hive
+### Hive
 
-#### HBase
+### HBase
 
-### OLAP
+## OLAP
 
-#### Impala
+### Impala
 
-#### Clickhouse
+### Clickhouse
 
-#### Kudu
+### Kudu
 
-#### Oozie
+### Oozie
 
-#### Elasticsearch
+### Elasticsearch
 
-### 数据计算
+## 数据计算
 
-#### Spark
+### Spark
 
-#### Flink
+### Flink
 
-### CDH/CDP
+## CDH/CDP
 
-#### 集成搭建
+### 集成搭建
 
-#### API
+### API
 
-#### 第三方服务集成
+### 第三方服务集成
 
 
 
