@@ -69,6 +69,10 @@
 
 ## C++
 
+### 基础语法
+
+### 设计模式
+
 ## Go
 
 1. 基础语法
@@ -144,6 +148,7 @@
 ### Clickhouse
 
 1. clickhouse使用
+2. 基本架构
 
 ### Kudu
 
@@ -154,6 +159,9 @@
 ## 数据计算
 
 ### Yarn
+
+1. **[Yarn架构与原理](docs/language/java/basis/Java基础知识疑难点.md)**
+2. **[Yarn核心部分源码分析](docs/language/java/basis/Java基础知识疑难点.md)**
 
 ### Spark
 
@@ -175,6 +183,12 @@
 ### 第三方服务集成
 
 1. parcels 打包
+
+# 云
+
+## kubeneties
+
+## docker
 
 
 

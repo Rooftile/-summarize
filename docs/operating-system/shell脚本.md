@@ -19,7 +19,7 @@ Shell 是一个应用程序，它连接了用户和 Linux 内核，让用户能�
 
 ​    注释：bash是 Bourne Again Shell 的缩写，是linux标准的默认shell ，它基于Bourne shell，吸收了C shell和Korn shell的一些特性。bash完全兼容sh，也就是说，用sh写的脚本可以不加修改的在bash中执行。
 
-
+## Shell配置文件（配置脚本）的加载
 
 # Shell编程
 
@@ -424,13 +424,177 @@ hello
 
 ## Shell数组
 
+### Shell 数组的定义
+
+在 Shell 中，用括号`( )`来表示数组，数组元素之间用空格来分隔。由此，定义数组的一般形式为：
+
+array_name=(ele1  ele2  ele3 ... elen)
+
+注意，赋值号`=`两边不能有空格，必须紧挨着数组名和数组元素。
+
+下面是一个定义数组的实例：
+
+```shell
+nums=(29 100 13 8 91 44)
+```
+
+
+Shell 是弱类型的，它并不要求所有数组元素的类型必须相同，例如：
+
+```shell
+arr=(20 56 "http://c.biancheng.net/shell/")
+```
+
+第三个元素就是一个“异类”，前面两个元素都是整数，而第三个元素是字符串。
+
+Shell 数组的长度不是固定的，定义之后还可以增加元素。例如，对于上面的 nums 数组，它的长度是 6，使用下面的代码会在最后增加一个元素，使其长度扩展到 7：
+
+```shell
+nums[6]=88
+```
+
+
+此外，你也无需逐个元素地给数组赋值，下面的代码就是只给特定元素赋值：
+
+```shell
+ages=([3]=24 [5]=19 [10]=12)
+```
+
+以上代码就只给第 3、5、10 个元素赋值，所以数组长度是 3。
+
+### 获取数组元素
+
+获取数组元素的值，一般使用下面的格式：
+
+${array_name[index]}
+
+其中，array_name 是数组名，index 是下标。例如：
+
+```shell
+n=${nums[2]}
+```
+
+表示获取 nums 数组的第二个元素，然后赋值给变量 n。再如：
+
+```shell
+echo ${nums[3]}
+```
+
+表示输出 nums 数组的第 3 个元素。
+
+使用`@`或`*`可以获取数组中的所有元素，例如：
+
+```shell
+${nums[*]}
+${nums[@]}
+```
+
+两者都可以得到 nums 数组的所有元素。
+
+完整的演示：
+
+```shell
+#!/bin/bash
+nums=(29 100 13 8 91 44)
+echo ${nums[@]}  #输出所有数组元素
+nums[10]=66  #给第10个元素赋值（此时会增加数组长度）
+echo ${nums[*]}  #输出所有数组元素
+echo ${nums[4]}  #输出第4个元素
+```
+
+运行结果：
+29 100 13 8 91 44
+29 100 13 8 91 44 66
+91
+
 ### Shell获取数组长度
+
+所谓数组长度，就是数组元素的个数。
+
+利用`@`或`*`，可以将数组扩展成列表，然后使用`#`来获取数组元素的个数，格式如下：
+
+```shell
+${#array_name[@]}
+${#array_name[*]}
+```
+
+其中 array_name 表示数组名。两种形式是等价的，选择其一即可。
 
 ### Shell数组拼接
 
+所谓 Shell 数组拼接（数组合并），就是将两个数组连接成一个数组。
+
+拼接数组的思路是：先利用`@`或`*`，将数组扩展成列表，然后再合并到一起。具体格式如下：
+
+array_new=(${array1[@]}  ${array2[@]})
+array_new=(${array1[*]}  ${array2[*]})
+
+两种方式是等价的，选择其一即可。其中，array1 和 array2 是需要拼接的数组，array_new 是拼接后形成的新数组。
+
+下面是完整的演示代码：
+
+```shell
+#!/bin/bash
+array1=(23 56)
+array2=(99 "http://c.biancheng.net/shell/")
+array_new=(${array1[@]} ${array2[*]})
+echo ${array_new[@]}  #也可以写作 ${array_new[*]}
+```
+
+运行结果：
+23 56 99 http://c.biancheng.net/shell/
+
 ### Shell删除数组元素
 
-### Shell关联数组
+在 Shell 中，使用 unset 关键字来删除数组元素，具体格式如下：
+
+unset array_name[index]
+
+其中，array_name 表示数组名，index 表示数组下标。
+
+如果不写下标，而是写成下面的形式：
+
+unset array_name
+
+那么就是删除整个数组，所有元素都会消失。
+
+下面我们通过具体的代码来演示：
+
+```shell
+#!/bin/bash
+arr=(23 56 99 "http://c.biancheng.net/shell/")
+unset arr[1]
+echo ${arr[@]}
+unset arr
+echo ${arr[*]}
+```
+
+运行结果：
+
+23 99 http://c.biancheng.net/shell/
+
+注意最后的空行，它表示什么也没输出，因为数组被删除了，所以输出为空。
+
+### Shell关联数组（Map）
+
+关联数组也称为“键值对（key-value）”数组，键（key）也即字符串形式的数组下标，值（value）也即元素值。
+
+例如，我们可以创建一个叫做 color 的关联数组，并用颜色名字作为下标。
+
+```shell
+declare -A color
+color["red"]="#ff0000"
+color["green"]="#00ff00"
+color["blue"]="#0000ff"
+```
+
+也可以在定义的同时赋值：
+
+```shell
+declare -A color=(["red"]="#ff0000", ["green"]="#00ff00", ["blue"]="#0000ff")
+```
+
+不同于普通数组，关联数组必须使用带有`-A`选项的 declare 命令创建。关于 declare 命令的详细用法请访问：
 
 ## Shell内建命令
 
