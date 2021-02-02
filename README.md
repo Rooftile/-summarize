@@ -131,6 +131,8 @@
 3. 常用命令
 4. Api
 
+### Etcd
+
 ## 分布式数据存储
 
 ### HDFS
@@ -184,13 +186,49 @@
 
 1. parcels 打包
 
-# 云
+## 监控
+
+### prometheus
+
+1. prometheus基本概念及原理
+2. prometheus使用
+
+https://www.prometheus.wang/quickstart/why-monitor.html
+
+# 微服务
 
 ## kubeneties
 
 ## docker
 
+## 服务拆分原则
 
+
+
+
+
+```flow
+st=>start: 开始
+
+e=>end: 结束
+
+op=>operation: 操作
+
+sub=>subroutine: 子程序
+
+cond=>condition: 是或者不是?
+
+io=>inputoutput: 输出
+
+
+st(right)->op->cond
+
+cond(yes)->io(right)->e
+
+cond(no)->sub(right)->op
+
+
+```
 
 
 
